@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Mouse {
+            constructor(name, quatity, speed, status) {
+                this.name = name;
+                this.quatity = quatity;
+                this.speed = speed;
+                this.status = status;
+
+            }
+            speak(string) {
+                alert("Mouse say: " + string);
+            }
+        }
+        class Cat {
+            constructor(name, quatity, maxSpeed) {
+                this.name = name;
+                this.quatity = quatity;
+                this.maxSpeed = maxSpeed;
+
+            }
+            speak(string) {
+                alert("Cat say: " + string)
+            }
+            catchMouse(mouse) {
+                if (mouse.speed < this.maxSpeed) {
+                    alert("Caught the mouse name:  " + mouse.name);
+
+                }
+            }
+            eatMouse(mouse) {
+                if (mouse.status == 1) {
+                    this.quatity += mouse.quatity;
+                    alert(this.quatity);
+
+                }
+            }
+        }
+        let rat = new Mouse("Rat", 5, 30, 1);
+        let cat = new Cat("Tom", 30, 50);
+        cat.speak("Chuột kia tao bắt mày đây!!!");
+        cat.catchMouse(rat);
+        cat.eatMouse(rat);
+    </script>
+</body>
+
+</html>
